@@ -1,0 +1,54 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F0EC74; /* Soft yellow background */
+}
+
+.hero-section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.hero-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #000;
+}
+
+.hero-section-subtitle {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .hero-section-title {
+    font-size: 3rem;
+  }
+  
+  .hero-section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-section-subtitle {
+    font-size: 0.9rem;
+  }
+}
