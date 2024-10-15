@@ -42,8 +42,7 @@ const VideoPlayerHeroSection: React.FC = (): JSX.Element => {
             width: '100%',
             height: 'auto',
             maxHeight: '1350px', // Adjust the max size
-            maxWidth: '1350px', // Adjust the max size
-            borderRadius: '8px', // Optional: add styling
+            maxWidth: '1150px', // Adjust the max size
           }}
         />
       </div>

@@ -1,0 +1,145 @@
+:root {
+  --divider-color: black; /* Divider color */
+  --text-black: black; /* Text color */
+  --button-bg-color: black; /* Button background color */
+  --button-text-color: white; /* Button text color */
+  --button-hover-bg-color: white; /* Button hover background color */
+  --button-hover-text-color: black; /* Button hover text color */
+  --icon-font-size-large: 3rem; /* Base icon font size for large devices */
+  --icon-font-size-medium: 2.5rem; /* Medium icon font size for tablets */
+  --icon-font-size-small: 2rem; /* Small icon font size for phones */
+  --title-font-size-large: 2.8rem; /* Base title font size for large devices */
+  --title-font-size-medium: 2.5rem; /* Medium title font size for tablets */
+  --title-font-size-small: 2rem; /* Small title font size for phones */
+  --description-font-size-large: 1.5rem; /* Base description font size for large devices */
+  --description-font-size-medium: 1.25rem; /* Medium description font size for tablets */
+  --description-font-size-small: 1rem; /* Small description font size for phones */
+  --list-item-font-size-large: 1rem; /* Base list item font size for large devices */
+  --list-item-font-size-medium: 0.9rem; /* Medium list item font size for tablets */
+  --list-item-font-size-small: 0.8rem; /* Small list item font size for phones */
+}
+
+/* Divider */
+.Divider {
+  background-color: var(--divider-color);
+  border: 1px thin var(--divider-color);
+}
+
+/* RightBoxAboutUs */
+.RightBoxAboutUs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* Title and Icon */
+.RightBoxAboutUs-Box-1-Title-And-Icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5%;
+}
+
+/* IconButton */
+.IconButton {
+  color: var(--text-black);
+  font-size: var(--icon-font-size-large); /* Base size for large devices */
+  padding: 0;
+}
+
+/* Title */
+.Title {
+  font-size: var(--title-font-size-large); /* Base size for large devices */
+  color: var(--text-black); /* Ensure text is black */
+}
+
+/* Description */
+.RightBoxAboutUs-Box-1-Description {
+  font-size: var(--description-font-size-large); /* Base size for large devices */
+  color: var(--text-black); /* Ensure text is black */
+}
+
+/* Paragraph */
+.paragraph {
+  color: var(--text-black); /* Ensure text is black */
+}
+
+/* Built-Child-Description */
+.Built-Child-Description {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+/* List and List Items */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-black); /* Ensure list text is black */
+}
+
+li.child-B {
+  font-size: var(--list-item-font-size-large);
+  margin-bottom: 10px;
+  color: var(--text-black); /* Ensure list item text is black */
+}
+
+/* Button Outliner */
+.ButtonOutliner {
+  display: flex;
+  justify-content: start;
+}
+
+.ButtonOutliner button {
+  background-color: var(--button-bg-color); /* Make button background black */
+  color: var(--button-text-color); /* Make button text white */
+  border: none; /* Remove border */
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.ButtonOutliner button:hover {
+  background-color: var(--button-hover-bg-color); /* Change background to white on hover */
+  color: var(--button-hover-text-color); /* Make text black on hover */
+  border: 1px solid var(--divider-color); /* Add border on hover */
+}
+
+/* Responsive for medium devices (tablets, etc.) */
+@media (max-width: 1024px) {
+  .IconButton {
+      font-size: var(--icon-font-size-medium); /* Reduce size */
+  }
+
+  .Title {
+      font-size: var(--title-font-size-medium); /* Adjust title size */
+  }
+
+  .RightBoxAboutUs-Box-1-Description {
+      font-size: var(--description-font-size-medium); /* Adjust description size */
+  }
+
+  li.child-B {
+      font-size: var(--list-item-font-size-medium); /* Adjust list item font size */
+  }
+}
+
+/* Responsive for small devices (phones, etc.) */
+@media (max-width: 768px) {
+  .IconButton {
+      font-size: var(--icon-font-size-small); /* Further reduce size */
+  }
+
+  .Title {
+      font-size: var(--title-font-size-small); /* Further reduce title size */
+  }
+
+  .RightBoxAboutUs-Box-1-Description {
+      font-size: var(--description-font-size-small); /* Further reduce description size */
+  }
+
+  li.child-B {
+      font-size: var(--list-item-font-size-small); /* Further reduce list item font size */
+  }
+}

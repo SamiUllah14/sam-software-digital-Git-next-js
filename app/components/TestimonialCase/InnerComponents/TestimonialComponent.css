@@ -1,0 +1,240 @@
+/* Parent container styling */
+
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  min-height: 75vh;
+  padding: 20px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+}
+
+/* Style for clickable and underlined link */
+.clickable-link {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clickable-link:hover {
+  color: white; /* Optional: Change color on hover */
+}
+
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px; /* Limit width for larger screens */
+  height: 100%;
+  justify-content: start;
+  overflow: auto;
+  padding: 10px;
+}
+
+/* Case container */
+.case-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+  background-color: white;
+}
+
+/* Individual case items */
+.case-items {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background-color: white;
+  color: black;
+  justify-content: start;
+}
+
+/* Case item text */
+.case-items-text-para {
+  font-size: 1em;
+  color: black;
+
+  text-align: center;
+}
+
+/* Content container */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%; /* Adjusted to be flexible */
+  background-color: white;
+  margin-top: 10px;
+  flex-direction: row;
+  
+
+}
+
+
+/* First content item (video section) */
+.content-item-1 {
+  display: flex;
+  background-color: white;
+  width: 70%;
+  height: 100%;
+}
+
+/* Second content item (description section) */
+.content-item-2 {
+  display: flex;
+  background-color: white;
+  width: 28%;
+  height: 100%;
+  margin-top: 5%;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Content item 2 child (text block) */
+.content-item-2-child {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: white;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+/* Title styling */
+.content-item-2-child-title {
+  
+  font-size: 1.5em;
+  color: grey;
+  margin-bottom: 10px;
+  
+}
+
+/* Brand name styling */
+.content-item-2-child-brand-name {
+  font-size: 2em;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Description styling */
+.content-item-2-child-Description-small {
+  font-size: 0.9em;
+  color: grey;
+}
+
+/* Divider styling */
+.divider {
+  background-color: black;
+}
+
+/* Hide 'All Cases' in larger screens */
+.hide-on-mobile {
+  display: block;
+}
+
+/* Show 'All Cases' inside the description only on small screens */
+.show-on-mobile {
+  display: flex;
+  background-color: white;
+  font-size: 12px;
+  margin-left: 6%;
+  margin-right: 6%;
+  color: black;
+
+  display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none; /* Hide on small screens */
+  }
+
+  .show-on-mobile {
+    display: inline; /* Show inside the description on mobile */
+  }
+
+  .parent-container {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none; /* Remove max width */
+    height: auto;
+  }
+
+  .case-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .case-items {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+.case-items-text-para{
+  font-size: 12px;
+}
+  .content-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content-item-1, .content-item-2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-item-2-child-title, .content-item-2-child-brand-name {
+    font-size: 1.2em;
+  }
+
+  .content-item-2-child-Description-small {
+    font-size: 0.8em;
+  }
+
+  .show-on-mobile {
+    display: inline; /* Ensure it's displayed on small devices */
+    font-weight: normal; /* Optional: Make it stand out if needed */
+  }
+}
+
+@media (max-width: 680px) {
+  .content-item-2-child-title {
+    font-size: 1em;
+  }
+
+  .content-item-2-child-brand-name {
+    font-size: 1.5em;
+  }
+
+  .content-item-2-child-Description-small {
+    font-size: 0.75em;
+  }
+
+  .show-on-mobile {
+    display: inline; /* Ensure it's displayed on small devices */
+  }
+  .content-item-2 {
+    margin-top: 0; /* Remove the margin-top on mobile */
+  }
+  
+}

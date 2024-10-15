@@ -1,0 +1,31 @@
+.button {
+  background: none;
+  border: 1px solid #000;
+  border-radius: 50px;
+  padding: 5px 15px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  color: #000;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}

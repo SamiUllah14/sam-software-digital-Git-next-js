@@ -1,0 +1,65 @@
+.background-container {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    width: 100%;
+    height: 70vh;
+    background-color: black;
+}
+
+.brand-parent-container {
+    display: flex;
+    flex-direction: column; /* Ensures children stack vertically */
+    max-width: 1200px; /* Maximum width of the parent container */
+    width: 90%;        /* Full width with some padding */
+    height: 80%;       /* Height of the parent container */
+    background-color: black;
+    margin: 0 auto;    /* Center the parent container */
+}
+
+.brand-child-1 {
+    display: flex;
+    width: 50%;        /* Default width of the first child */
+    height: 30%;       /* Height of the first child */
+    background-color: black;
+    justify-content: center; /* Center text within this child */
+    align-items: center;     /* Center text within this child */
+}
+
+.brand-child-2 {
+    display: flex;
+    justify-content: center; /* Center logos horizontally */
+    align-items: center;     /* Center logos vertically */
+    flex-wrap: wrap;         /* Allows logos to wrap on smaller screens */
+    width: 90%;              /* Changed to 90% for consistency */
+    height: 100%;            /* Occupies the full height of the parent */
+    background-color: black; 
+    margin: 2% 5%;          /* Shortened margin declaration */
+}
+
+.brand-text-customers {
+    font-size: 1.2em;
+}
+
+.brand-text-customers-child {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+}
+
+/* Add margin for images */
+.brand-logo {
+    margin: 10px; /* Adjust the value as needed for desired spacing */
+}
+
+/* Mobile devices: make brand-child-1 full width on small screens */
+@media (max-width: 768px) {
+    .brand-child-1 {
+        width: 100%;  /* Full width on mobile devices */
+    }
+    
+    .brand-child-2 {
+        width: 100%;  /* Make brand-child-2 full width on mobile devices */
+        margin: 3% 0; /* Adjust margin for mobile to center it */
+    }
+}

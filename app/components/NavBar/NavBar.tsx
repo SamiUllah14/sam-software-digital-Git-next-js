@@ -1,9 +1,9 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { FaBars, FaChevronDown } from 'react-icons/fa';
-import SamSblackLogo from '@/app/Images/SamSblack.png'; // Import your PNG image here
+import SamSblackLogo from '@/app/Images/NewYorkSoftLogoBlack.png'; // Import your PNG image here
+import Link from 'next/link'; // Import Link from Next.js
 
 const NavBar: React.FC = () => {
   const navOverlayRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,6 @@ const NavBar: React.FC = () => {
     }
   };
 
-
   const closeNav = () => {
     if (navOverlayRef.current) {
       gsap.to(navLinksRef.current, { opacity: 0, y: 20, duration: 0.1 });
@@ -74,30 +73,37 @@ const NavBar: React.FC = () => {
             <FaBars className="text-white" />
           </button>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }}>
+            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
               Services <FaChevronDown className="ml-1 text-white" />
             </button>
           </div>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }}>
+            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
               Products <FaChevronDown className="ml-1 text-white" />
             </button>
           </div>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }}>
+            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
               About <FaChevronDown className="ml-1 text-white" />
             </button>
           </div>
         </div>
         <div className="flex items-center h-20">
           <div className="flex flex-col items-center">
+          <Link href="/">
+
             <img alt="Bitfactory logo" className="h-10" src={SamSblackLogo.src} width="40" /> {/* Use the imported PNG image */}
+            </Link>
           </div>
         </div>
         <div className="flex items-center space-x-8 hidden lg:flex">
-          <a className="text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#">Cases</a>
-          <a className="text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#">Insights</a>
-          <a className="text-white font-medium border border-white rounded-full px-4 py-2" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#">Contact</a>
+          <a className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }} href="#">Cases</a>
+          <a className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }} href="#">Insights</a>
+          <Link href="/Contactus"> {/* Use Link for navigation */}
+            <button className="text-white font-small border border-white rounded-full px-4 py-2" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+              Contact
+            </button>
+          </Link>
         </div>
       </nav>
 

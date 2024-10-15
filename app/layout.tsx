@@ -4,6 +4,7 @@ import { IBM_Plex_Sans } from 'next/font/google';
 
 import './globals.css';
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/GlobalComponents/Footer/Footer";
 
 // Initialize Silkscreen font
 const silkscreenInit = Silkscreen({
@@ -31,10 +32,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${silkscreenInit.variable} ${ibmPlexSansInit.variable}`}>
+      <body className={`${ibmPlexSansInit.variable} ${ibmPlexSansInit.variable}`}>
         <NavBar />
         {children}
+        <Footer/>
+
       </body>
+
     </html>
   );
 }
