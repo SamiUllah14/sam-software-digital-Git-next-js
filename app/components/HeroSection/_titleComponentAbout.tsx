@@ -1,4 +1,4 @@
-"use client";
+"use client"; // This directive is used for Next.js, if applicable
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './PageHeroSection'; // Optional for additional styles
@@ -9,9 +9,15 @@ interface TitleComponentProps {
   title: string;
   subtitle: string;
   showVideo?: boolean; // Optional prop to conditionally render the video section
+  backgroundColor?: string; // Optional prop for background color
 }
 
-const TitleComponent: React.FC<TitleComponentProps> = ({ title, subtitle, showVideo = true }) => {
+const TitleComponent: React.FC<TitleComponentProps> = ({
+  title,
+  subtitle,
+  showVideo = true,
+  backgroundColor = 'transparent', // Default background color
+}) => {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -31,7 +37,7 @@ const TitleComponent: React.FC<TitleComponentProps> = ({ title, subtitle, showVi
   }, []);
 
   return (
-    <div className="hero-section">
+    <div className="hero-section" style={{ backgroundColor }}>
       <div className="hero-section-content">
         <h1 ref={titleRef} className="hero-section-title pt-10 md:pt-20">
           {/* Reduced padding for small devices */}
@@ -48,7 +54,7 @@ const TitleComponent: React.FC<TitleComponentProps> = ({ title, subtitle, showVi
       </div>
       {showVideo && (
         <div className="pt-10 md:pt-20">
-        <VideoPlayerHeroSection />
+          <VideoPlayerHeroSection />
         </div>
       )}
     </div>
