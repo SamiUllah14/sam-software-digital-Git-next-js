@@ -73,33 +73,42 @@ const NavBar: React.FC = () => {
             <FaBars className="text-white" />
           </button>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
-              Services <FaChevronDown className="ml-1 text-white" />
-            </button>
+            <Link href="/Services">
+              <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+                Services <FaChevronDown className="ml-1 text-white" />
+              </button>
+            </Link>
           </div>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
-              Products <FaChevronDown className="ml-1 text-white" />
-            </button>
+            <Link href="/Products">
+              <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+                Products <FaChevronDown className="ml-1 text-white" />
+              </button>
+            </Link>
           </div>
           <div className="relative group hidden lg:flex">
-            <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
-              About <FaChevronDown className="ml-1 text-white" />
-            </button>
+            <Link href="/About">
+              <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+                About <FaChevronDown className="ml-1 text-white" />
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex items-center h-20">
           <div className="flex flex-col items-center">
-          <Link href="/">
-
-            <img alt="Bitfactory logo" className="h-10" src={SamSblackLogo.src} width="40" /> {/* Use the imported PNG image */}
+            <Link href="/">
+              <img alt="NewYorkSoftwareslogo" className="h-10" src={SamSblackLogo.src} width="40" /> {/* Use the imported PNG image */}
             </Link>
           </div>
         </div>
         <div className="flex items-center space-x-8 hidden lg:flex">
-          <a className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }} href="#">Cases</a>
-          <a className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }} href="#">Insights</a>
-          <Link href="/Contactus"> {/* Use Link for navigation */}
+          <Link href="/Cases">
+            <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Cases</span>
+          </Link>
+          <Link href="/Insights">
+            <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Insights</span>
+          </Link>
+          <Link href="/Contactus">
             <button className="text-white font-small border border-white rounded-full px-4 py-2" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
               Contact
             </button>
@@ -110,11 +119,13 @@ const NavBar: React.FC = () => {
       <div className="nav-overlay fixed top-0 left-0 w-full h-full bg-black transition-transform duration-500 ease-in-out transform -translate-y-full z-10" ref={navOverlayRef}>
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
-          <a ref={setNavLinkRef(0)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#" onClick={closeNav}>Services</a>
-          <a ref={setNavLinkRef(1)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#" onClick={closeNav}>Products</a>
-          <a ref={setNavLinkRef(2)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#" onClick={closeNav}>About</a>
-          <a ref={setNavLinkRef(3)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#" onClick={closeNav}>Cases</a>
-          <a ref={setNavLinkRef(4)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} href="#" onClick={closeNav}>Insights</a>
+          {['services', 'products', 'about', 'cases', 'insights'].map((item, index) => (
+            <Link href={`/${item}`} key={index}>
+              <span ref={setNavLinkRef(index)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} onClick={closeNav}>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </>

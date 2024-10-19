@@ -1,6 +1,7 @@
 import React from 'react';
 import SamSblackLogo from '@/app/Images/NewYorkSoftLogoBlack.png'; // Import your PNG image here
 import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
+import Link from 'next/link'; // Assuming you're using Next.js for link navigation
 
 const Footer = () => {
   return (
@@ -12,64 +13,53 @@ const Footer = () => {
               <img alt="Bitfactory logo" className="h-10" src={SamSblackLogo.src} width="40" />
             </div>
             <p className="mt-6 max-w-md leading-relaxed text-gray-500 sm:max-w-xs dark:text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa
-              cum itaque neque.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque.
             </p>
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
               <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
+                <Link
+                  href="/facebook" // Add correct internal paths
                   className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                 >
                   <span className="sr-only">Facebook</span>
                   <FaFacebook className="size-6" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
+                <Link
+                  href="/instagram" // Add correct internal paths
                   className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                 >
                   <span className="sr-only">Instagram</span>
                   <FaInstagram className="size-6" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
+                <Link
+                  href="/twitter" // Add correct internal paths
                   className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                 >
                   <span className="sr-only">Twitter</span>
                   <FaTwitter className="size-6" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
+                <Link
+                  href="/github" // Add correct internal paths
                   className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                 >
                   <span className="sr-only">GitHub</span>
                   <FaGithub className="size-6" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  rel="noreferrer"
-                  target="_blank"
+                <Link
+                  href="/dribbble" // Add correct internal paths
                   className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                 >
                   <span className="sr-only">Dribbble</span>
                   <FaDribbble className="size-6" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -82,7 +72,12 @@ const Footer = () => {
               },
               {
                 title: 'Our Services',
-                links: ['Web Development', 'Mobile Application Development', 'Marketing', 'Google Ads'],
+                links: [
+                  'Web Development',
+                  'Mobile Application Development',
+                  'Marketing',
+                  'Google Ads',
+                ],
               },
               {
                 title: 'Helpful Links',
@@ -99,27 +94,62 @@ const Footer = () => {
                 <ul className="mt-8 space-y-4 text-sm">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
-                        className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                        href="#"
-                      >
-                        {link}
-                      </a>
+                      {link === 'FAQs' ? (
+                        <Link
+                          href="/faqs" // Add the correct link to the FAQs page here
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      ) : link === 'Web Development' ? (
+                        <Link
+                          href="/Services/WebDevelopment" // Correct internal link for Web Development
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      ) : link === 'Mobile Application Development' ? (
+                        <Link
+                          href="/Services/MobileDevelopment" // Correct internal link for Mobile Application Development
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      ) : link === 'Marketing' ? (
+                        <Link
+                          href="/Services/MarketingTeam" // Correct internal link for Marketing
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      ) : link === 'Google Ads' ? (
+                        <Link
+                          href="/Services/GoogleAds" // Correct internal link for Google Ads
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <Link
+                          href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} // Example internal path for other links
+                          className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                        >
+                          {link}
+                        </Link>
+                      )}
                     </li>
                   ))}
                   {section.icons && (
                     <li className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
                       {section.icons.map((Icon, iconIndex) => (
-                        <a
-                          href="#"
-                          rel="noreferrer"
-                          target="_blank"
+                        <Link
+                          href={`/${section.links[iconIndex].toLowerCase()}`} // Example internal paths for icons
                           className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
                           key={iconIndex}
                         >
                           <span className="sr-only">{section.links[iconIndex]}</span>
                           <Icon className="size-6" />
-                        </a>
+                        </Link>
                       ))}
                     </li>
                   )}
@@ -133,19 +163,19 @@ const Footer = () => {
           <div className="text-center sm:flex sm:justify-between sm:text-left">
             <p className="text-sm text-gray-500 dark:text-gray-400">
               <span className="block sm:inline">All rights reserved.</span>
-              <a
+              <Link
                 className="inline-block text-teal-600 transition hover:text-teal-600/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                href="#"
+                href="/terms-and-conditions"
               >
                 Terms & Conditions
-              </a>
+              </Link>
               <span className="mx-1">&middot;</span>
-              <a
+              <Link
                 className="inline-block text-teal-600 transition hover:text-teal-600/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                href="#"
+                href="/privacy-policy"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </p>
             <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0 dark:text-gray-400">
               <time dateTime="2024">© 2024 New York Softwares</time>

@@ -1,8 +1,11 @@
 :root {
+    /* Color Variables */
     --main-bg-color: #F0EC74; /* Main background color */
     --text-black: black; /* Text color */
     --divider-color: black; /* Divider color */
     --white-color: white; /* White color for text */
+
+    /* Font Size Variables */
     --mobile-font-size: 1em; /* Mobile font size */
     --tablet-font-size: 4vw; /* Tablet font size */
     --desktop-font-size: 1vw; /* Desktop font size */
@@ -12,23 +15,23 @@
 
 .text-black {
     color: var(--text-black);
-    font-size: var(--desktop-font-size); /* Use desktop font size */
+    font-size: var(--desktop-font-size); /* Desktop-specific font size */
 }
 
 .text-black-P {
     color: var(--text-black);
-    font-size: var(--desktop-paragraph-font-size); /* Use desktop paragraph font size */
+    font-size: var(--desktop-paragraph-font-size); /* Desktop-specific paragraph font size */
 }
 
 .about-us {
-    margin: 0 5% 5% 5%; /* Consolidate margin settings */
+    margin: 0 5% 5%; /* Uniform margins */
 }
 
 .About-Us-Container {
     display: flex;
     background-color: var(--main-bg-color);
     height: 100%;
-    margin: 7% auto 0; /* Consolidate margin settings */
+    margin: 7% auto 0;
     max-width: 1150px;
     width: 100%;
     flex-wrap: wrap;
@@ -50,14 +53,14 @@
     background-color: var(--main-bg-color);
     height: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
 .Child-of-Child-1 {
     flex: 1;
     background-color: var(--main-bg-color);
-    border: 1px solid transparent; /* Use transparent border */
+    border: 1px solid transparent; /* Transparent border */
     height: 30%;
     flex-direction: column;
 }
@@ -74,7 +77,7 @@
     height: 100%;
     width: 100%;
     justify-content: flex-end;
-    color: var(--white-color); /* Use variable for white text */
+    color: var(--white-color); /* White text color */
 }
 
 .Child-1-Box-2 {
@@ -90,22 +93,22 @@
 /* Media Query for Tablet Devices */
 @media screen and (max-width: 1024px) {
     .text-black {
-        font-size: var(--tablet-font-size); /* Use tablet font size */
+        font-size: var(--tablet-font-size); /* Tablet-specific font size */
     }
 
     .text-black-P {
-        font-size: var(--mobile-paragraph-font-size); /* Use mobile paragraph font size */
+        font-size: var(--mobile-paragraph-font-size); /* Tablet-specific paragraph font size */
     }
 }
 
 /* Media Query for Mobile Devices */
-@media screen and (max-width: 1068px) {
+@media screen and (max-width: 768px) {
     .text-black {
-        font-size: var(--mobile-font-size); /* Use mobile font size */
+        font-size: var(--mobile-font-size); /* Mobile-specific font size */
     }
 
     .text-black-P {
-        font-size: var(--mobile-paragraph-font-size); /* Use mobile paragraph font size */
+        font-size: var(--mobile-paragraph-font-size); /* Mobile-specific paragraph font size */
     }
 
     .About-Us-Box-1 {
@@ -120,9 +123,10 @@
     }
 
     .Child-of-Child-1 {
-        margin: 5% 0 10%; /* Consolidate margin settings */
+        margin: 5% 0 10%; /* Adjusted margin for better spacing */
         height: 40%;
     }
+
     .Divider-1 {
         width: 50%;
         background-color: var(--divider-color);

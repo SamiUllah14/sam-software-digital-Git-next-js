@@ -68,21 +68,22 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
           </button>
           {['Services', 'Products', 'About'].map((item, index) => (
             <div className="relative group hidden lg:flex" key={index}>
-              <button className="flex items-center text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
-                {item} <FaChevronDown className="ml-1" />
-              </button>
+              <Link href={`/${item.replace(/\s+/g, '-')}`}>
+                <button className="flex items-center text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+                  {item} <FaChevronDown className="ml-1" />
+                </button>
+              </Link>
             </div>
           ))}
         </div>
         <div className="flex flex-col items-center">
-        <Link href="/">
-
-          <img
-            alt="Sam logo"
-            className="samlogo h-10 md:h-20 w-10 md:w-24"
-            src={Samlogo.src}
-            style={{ maxWidth: '100%' }} 
-          />
+          <Link href="/">
+            <img
+              alt="Sam logo"
+              className="samlogo h-10 md:h-20 w-10 md:w-24"
+              src={Samlogo.src}
+              style={{ maxWidth: '100%' }} 
+            />
           </Link>
           <span
             className="text-black font-bold"
@@ -93,7 +94,11 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
         </div>
         <div className="flex items-center space-x-8 hidden lg:flex">
           {['Cases', 'Insights'].map((item, index) => (
-            <a key={index} className="text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }} href="#">{item}</a>
+            <Link href={`/${item}`} key={index}>
+              <span className="text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
+                {item}
+              </span>
+            </Link>
           ))}
           <ButtonOutliner text="Contact" href="Contactus" />
         </div>
@@ -103,16 +108,16 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
           {['Services', 'Products', 'About', 'Cases', 'Insights'].map((item, index) => (
-            <a 
-              key={index}
-              ref={setNavLinkRef(index)} 
-              className="nav-link text-2xl" 
-              style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} 
-              href="#" 
-              onClick={closeNav}
-            >
-              {item}
-            </a>
+            <Link href={`/${item.replace(/\s+/g, '-')}`} key={index}>
+              <span 
+                ref={setNavLinkRef(index)} 
+                className="nav-link text-2xl" 
+                style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} 
+                onClick={closeNav}
+              >
+                {item}
+              </span>
+            </Link>
           ))}
         </div>
       </div>

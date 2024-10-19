@@ -17,6 +17,14 @@
     margin: 0 auto;    /* Center the parent container */
 }
 
+.brand-logo {
+    border-radius: 50%; /* Make the logo circular */
+    object-fit: cover;  /* Ensure the image fits within the circle */
+    margin: 5px; /* Margin for spacing */
+    width: 50px; /* Default size for larger screens */
+    height: 50px; /* Default size for larger screens */
+}
+
 .brand-child-1 {
     display: flex;
     width: 50%;        /* Default width of the first child */
@@ -34,7 +42,7 @@
     width: 90%;              /* Changed to 90% for consistency */
     height: 100%;            /* Occupies the full height of the parent */
     background-color: black; 
-    margin: 2% 5%;          /* Shortened margin declaration */
+    margin: 1% auto;        /* Centered margin for mobile */
 }
 
 .brand-text-customers {
@@ -47,11 +55,6 @@
     margin-top: 1%;
 }
 
-/* Add margin for images */
-.brand-logo {
-    margin: 10px; /* Adjust the value as needed for desired spacing */
-}
-
 /* Mobile devices: make brand-child-1 full width on small screens */
 @media (max-width: 768px) {
     .brand-child-1 {
@@ -60,6 +63,27 @@
     
     .brand-child-2 {
         width: 100%;  /* Make brand-child-2 full width on mobile devices */
-        margin: 3% 0; /* Adjust margin for mobile to center it */
+        margin: 1% auto; /* Centered margin for mobile */
+    }
+
+    /* Increase logo sizes for mobile */
+    .brand-logo {
+        width: 70px; /* Increased size for mobile */
+        height: 70px; /* Increased size for mobile */
+    }
+}
+
+/* Medium devices (e.g., tablets) */
+@media (min-width: 640px) {
+    .brand-logo {
+        width: 60px; /* Size for medium screens */
+        height: 60px; /* Size for medium screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .brand-logo {
+        width: 80px; /* Size for larger screens */
+        height: 80px; /* Size for larger screens */
     }
 }

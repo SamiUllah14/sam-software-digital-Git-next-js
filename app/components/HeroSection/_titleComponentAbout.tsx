@@ -10,6 +10,8 @@ interface TitleComponentProps {
   subtitle: string;
   showVideo?: boolean; // Optional prop to conditionally render the video section
   backgroundColor?: string; // Optional prop for background color
+  titleColor?: string; // Optional prop for title text color
+  subtitleColor?: string; // Optional prop for subtitle text color
 }
 
 const TitleComponent: React.FC<TitleComponentProps> = ({
@@ -17,6 +19,8 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
   subtitle,
   showVideo = true,
   backgroundColor = 'transparent', // Default background color
+  titleColor = '#000', // Default title text color
+  subtitleColor = '#555', // Default subtitle text color
 }) => {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const subtitleRef = useRef<HTMLParagraphElement | null>(null);
@@ -39,8 +43,11 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
   return (
     <div className="hero-section" style={{ backgroundColor }}>
       <div className="hero-section-content">
-        <h1 ref={titleRef} className="hero-section-title pt-10 md:pt-20">
-          {/* Reduced padding for small devices */}
+        <h1
+          ref={titleRef}
+          className="hero-section-title pt-10 md:pt-20"
+          style={{ color: titleColor }} // Apply custom title color
+        >
           {title.split('<br />').map((line, index) => (
             <React.Fragment key={index}>
               {line}
@@ -48,7 +55,11 @@ const TitleComponent: React.FC<TitleComponentProps> = ({
             </React.Fragment>
           ))}
         </h1>
-        <p ref={subtitleRef} className="hero-section-subtitle mt-3 md:mt-5">
+        <p
+          ref={subtitleRef}
+          className="hero-section-subtitle mt-3 md:mt-5"
+          style={{ color: subtitleColor }} // Apply custom subtitle color
+        >
           {subtitle}
         </p>
       </div>

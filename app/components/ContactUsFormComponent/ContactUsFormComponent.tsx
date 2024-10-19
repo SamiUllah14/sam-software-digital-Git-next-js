@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ContactUsFormComponent.css'; // for additional styles
 
 const ContactUsFormComponent: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -39,56 +38,66 @@ const ContactUsFormComponent: React.FC = () => {
   };
 
   return (
-    <div className="contact-us-form-component-background">
-      <div className="contact-us-form-component-container">
-        <div id="container">
-          <h1>&bull; Contact us &bull;</h1>
-          <div className="underline"></div>
-          <form onSubmit={handleSubmit} id="contact_form">
-            <div className="name">
-              <label htmlFor="name"></label>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-lg w-full space-y-8 bg-white p-8 shadow-lg r text-gray-500 rounded-lg">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-900">Contact Us</h1>
+          <p className="mt-2 text-sm text-gray-600">We'd love to hear from you!</p>
+        </div>
+
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="name" className="sr-only">Name</label>
               <input 
                 type="text" 
-                placeholder="My name is" 
                 name="name" 
-                id="name_input" 
+                id="name" 
+                placeholder="My name is" 
                 required 
                 value={formData.name}
                 onChange={handleChange} 
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
-            <div className="email">
-              <label htmlFor="email"></label>
+
+            <div>
+              <label htmlFor="email" className="sr-only">Email</label>
               <input 
                 type="email" 
-                placeholder="My e-mail is" 
                 name="email" 
-                id="email_input" 
+                id="email" 
+                placeholder="My e-mail is" 
                 required 
                 value={formData.email}
                 onChange={handleChange} 
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
-            <div className="telephone">
-              <label htmlFor="telephone"></label>
+
+            <div>
+              <label htmlFor="telephone" className="sr-only">Telephone</label>
               <input 
                 type="text" 
-                placeholder="My number is" 
                 name="telephone" 
-                id="telephone_input" 
+                id="telephone" 
+                placeholder="My number is" 
                 required 
                 value={formData.telephone}
                 onChange={handleChange} 
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
-            <div className="subject">
-              <label htmlFor="subject"></label>
+
+            <div>
+              <label htmlFor="subject" className="sr-only">Subject</label>
               <select 
                 name="subject" 
-                id="subject_input" 
+                id="subject" 
                 required
                 value={formData.subject}
                 onChange={handleChange}
+                className="w-full p-3 border text-gray-500 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               >
                 <option disabled hidden value="">Subject line</option>
                 <option>I'd like to start a project</option>
@@ -96,36 +105,42 @@ const ContactUsFormComponent: React.FC = () => {
                 <option>I'd like to make a proposal</option>
               </select>
             </div>
-            <div className="message">
-              <label htmlFor="message"></label>
+
+            <div>
+              <label htmlFor="message" className="sr-only">Message</label>
               <textarea 
                 name="message" 
+                id="message" 
                 placeholder="I'd like to chat about" 
-                id="message_input" 
                 cols={30} 
                 rows={5} 
                 required 
                 value={formData.message}
                 onChange={handleChange}
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               ></textarea>
             </div>
-            <div className="submit">
-              <input type="submit" value="Send Message" id="form_button" />
-            </div>
-          </form>
-          
-          {statusMessage && (
-            <div className={`status-message ${messageType}`}>
-              <span className="status-icon">
-                {messageType === 'success' ? '✔️' : '❌'}
-              </span>
-              <p>{statusMessage}</p>
-            </div>
-          )}
-        </div>
+          </div>
+
+          <div>
+          <button
+  type="submit"
+  className="w-full py-3 px-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black"
+>
+  Send Message
+</button>
+          </div>
+        </form>
+
+        {statusMessage && (
+          <div className={`mt-6 text-center p-4 rounded-lg ${messageType === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+            <span className="text-2xl">{messageType === 'success' ? '✔️' : '❌'}</span>
+            <p className="mt-2">{statusMessage}</p>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default ContactUsFormComponent;
