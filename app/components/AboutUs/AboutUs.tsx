@@ -8,22 +8,22 @@ import RightBoxAboutUsChild from './InnerComponents/RightBoxAboutUsChild/RightBo
 const AboutUs = () => {
   return (
     <div className="about-us">
-      {/* SEO Metadata for the About Us page */}
-      <meta 
-        name="description" 
-        content="Leading e-commerce and software development in New York. We create powerful, agile solutions tailored to your business needs." 
-      />
-      <meta 
-        name="keywords" 
-        content="New York, e-commerce solutions, software development, digital platforms, B2B, B2C, custom apps" 
-      />
+      {/* SEO Metadata */}
+      <meta name="description" content="Leading e-commerce and software development in New York, creating powerful solutions tailored to business needs." />
+      <meta name="keywords" content="New York, e-commerce solutions, software development, digital platforms, B2B, B2C, custom apps" />
       <meta name="geo.region" content="US-NY" />
+      <meta property="og:title" content="About Us | Leading E-commerce and Software Development in New York" />
+      <meta property="og:description" content="Discover our expert services in e-commerce, software, and mobile app development tailored for businesses in New York and beyond." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://yourdomain.com/about-us" />
+      <meta property="og:image" content="https://yourdomain.com/static/about-us-image.jpg" />
 
       <div className="About-Us-Container">
+
         {/* 'We are the makers' Section */}
         <section className="About-Us-Box-1">
           <div className="Child-1-Box-1">
-            <p className="text-black">We are the makers in New York</p>
+            <h2 className="text-black">We are the Makers in New York</h2>
             <Divider className="Divider-1" />
             <div className="Child-of-Child-1">
               <p className="text-black-P">
@@ -36,43 +36,43 @@ const AboutUs = () => {
         {/* Services Section: E-commerce, Software, and High Conversion Sites */}
         <section className="About-Us-Box-2">
           <div className="Child-1-Box-2">
-            {/* E-commerce Service */}
+            {/* Web Apps Service */}
             <RightBoxAboutUsChild
-              title="E-commerce"
-              boxDescription="E-commerce for brands, industry, and trade in New York"
-              description="We develop successful e-commerce solutions for New York businesses, covering B2B, D2C, and B2C. Our solutions focus on high conversion rates and superior brand experiences, seamlessly integrated with PIM, ERP, and CRM systems to meet customer needs."
+              title="Web Apps"
+              boxDescription="E-commerce solutions for brands, industry, and trade in New York."
+              description="We develop successful solutions for New York businesses, covering B2B, D2C, and B2C, focusing on high conversion rates and brand experiences, seamlessly integrated with PIM, ERP, and CRM systems."
               childItems={[
-                ['B2B e-commerce', 'B2C e-commerce'],
+                ['B2B Web app', 'B2C Web app'],
                 ['PIM system', 'Product configurator'],
               ]}
-              buttonText="More about E-commerce"
-              buttonLink="/learn-more"
+              buttonText="Contact Now"
+              buttonLink="/Contactus"
             />
 
-            {/* Software Development Service */}
+            {/* Mobile Apps Service */}
             <RightBoxAboutUsChild
-              title="Software"
-              boxDescription="Software and apps that drive success in New York"
-              description="We create high-quality software and apps for New York businesses, enhancing the user experience with agile development to meet your business goals. Our solutions are tailored to your specific requirements."
+              title="Mobile Apps"
+              boxDescription="High-quality apps for New York businesses."
+              description="Our mobile apps enhance the user experience with agile development tailored to meet your business goals."
               childItems={[
                 ['Web applications', 'Customer portal', 'Employee app'],
                 ['Mobile app', 'Business application'],
               ]}
-              buttonText="More about Software"
-              buttonLink="/learn-more-Software"
+              buttonText="Contact Now"
+              buttonLink="/Contactus"
             />
 
             {/* High Conversion Sites Service */}
             <RightBoxAboutUsChild
               title="Sites"
-              boxDescription="High Conversion Sites for New York businesses"
-              description="Deliver personalized digital experiences with high-conversion platforms. Our team collaborates with you to design and develop impactful platforms that resonate with your New York audience and ensure maximum engagement."
+              boxDescription="High-conversion platforms for New York businesses."
+              description="We design impactful digital platforms that resonate with your audience, ensuring maximum engagement and conversions."
               childItems={[
                 ['Corporate website', 'Recruitment website'],
                 ['High traffic platform', 'Intranet'],
               ]}
-              buttonText="More about Sites"
-              buttonLink="/learn-more-about-sites"
+              buttonText="Contact Now"
+              buttonLink="/Contactus"
             />
           </div>
         </section>

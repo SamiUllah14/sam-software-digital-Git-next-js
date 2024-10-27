@@ -1,0 +1,153 @@
+.ProductComponent-background {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    flex-direction: column;
+
+}
+
+.ProductComponent {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    background-color: black;
+
+}
+
+.filterTop {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    
+    gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.filterTop p {
+    margin: 0;
+    color: black;
+}
+
+.productContainer {
+    
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: fit-content;
+    width: 100%;
+    background-color: black;
+    max-width: 1320px;
+}
+
+.block1Sider {
+    display: flex;
+    height: fit-content;
+    flex: 1;
+    width: 50%;
+    flex-direction: column;
+}
+
+.block2Slider {
+    display: flex;
+    flex: 4;
+    height: fit-content;
+    flex-direction: column;
+    width: 50%;
+}
+
+.block2SliderInner {
+    display: flex;
+    flex: 2;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.block2SliderInnerButtons {
+    display: flex;
+    flex: 2;
+    margin-top: 2em;
+    padding-bottom: 10px;
+    height: 10vh;
+    width: 100%; /* Changed from 10% to 100% for better alignment */
+    background-color: black;
+    justify-content: space-evenly; /* Distributes buttons evenly */
+    align-items: start; /* Center-aligns buttons vertically */
+}
+
+.buttonBack, .buttonNext {
+    display: flex;
+    align-items: start; /* Center-aligns content inside buttons */
+}
+
+.buttonBack button, .buttonNext button {
+    border-radius: 10px;
+    padding: 10px 20px; /* Added padding for better button size */
+    color: white; /* Button text color */
+    cursor: pointer; /* Changes cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Button colors */
+.buttonBack button {
+    background-color: brown;
+}
+
+.buttonNext button {
+    background-color: purple;
+}
+
+/* Hover effects for buttons */
+.buttonBack button:hover {
+    background-color: darkred; /* Darker shade on hover */
+}
+
+.buttonNext button:hover {
+    background-color: darkviolet; /* Darker shade on hover */
+}
+
+/* Media query for responsiveness on small screens */
+@media (max-width: 768px) {
+    .productContainer {
+        flex-direction: column;
+    }
+
+    .block1Sider {
+        width: 100%;
+        margin-top: 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+        height: 10vh; /* Adjust height to fit on smaller screens */
+
+    }
+    .filterTop{
+        margin-left: 4%;
+        margin-right: 4%;
+
+    }
+    
+    .block2Slider {
+        width: 100%;
+        height: 50vh; /* Adjust height to fit on smaller screens */
+    }
+    
+    .block2SliderInnerButtons {
+        margin-top: 2px;
+        height: fit-content;
+    }
+
+    /* Adjust button size for small devices */
+    .buttonBack button, .buttonNext button {
+        padding: 5px 10px; /* Reduce padding for smaller buttons */
+        font-size: 12px; /* Adjust font size for smaller devices */
+    }
+    .filterTop p{
+
+        font-size: x-small;
+    }
+}

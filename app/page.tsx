@@ -1,5 +1,5 @@
 import PageHeroSection from "./components/HeroSection/PageHeroSection";
-import TestimonialPage from "./components/TestimonialCase/TestimonialPage";
+import TestimonialPage from "./components/TestimonialCaseSlider/TestimonialPage";
 import BrandsHomeSectionComponent from "./components/BrandsHomeSection/BrandsHomeSectionComponent";
 import ContactUsFormComponent from "./components/ContactUsFormComponent/ContactUsFormComponent";
 

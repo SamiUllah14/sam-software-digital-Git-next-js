@@ -12,7 +12,7 @@ const PageHeroSection = () => {
       
       <TitleComponent 
         title="Next Level<br />Digital Products"
-        subtitle="Hi, we are New York Softwares Team. Your partner for e-commerce, software, and sites!"
+        subtitle="Hi, we are New York Softwares Team. Your partner for web apps, mobile apps, and sites!"
         showVideo={true} // Controls whether the video is shown
       />
 

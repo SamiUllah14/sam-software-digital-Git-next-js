@@ -2,14 +2,12 @@
 import React from 'react';
 import './TestimonialComponent.css'; // for additional styles
 import { Divider } from '@material-ui/core';
-import CustomVideoGlobalComponent from '../../GlobalComponents/CustomVideoGlobalComponent/CustomVideoGlobalComponent';
 
 interface TestimonialComponentProps {
   title: string;
   brandName: string;
   description: string;
-  videoSrc: string;
-  fallbackVideoSrc: string; // Add this to the props
+  imageSrc: string; // New prop for the image source
   casesText?: string; // Optional prop for the cases text
   allCasesText?: string; // Optional prop for the "All Cases" text
   allCasesLink?: string; // Optional prop for the "All Cases" link
@@ -19,8 +17,7 @@ const TestimonialComponent: React.FC<TestimonialComponentProps> = ({
   title,
   brandName,
   description,
-  videoSrc,
-  fallbackVideoSrc, // Destructure this from props
+  imageSrc, // Destructure the new image source prop
   casesText = "Cases",
   allCasesText = "All Cases", // Default text for "All Cases"
   allCasesLink = "#"
@@ -46,10 +43,7 @@ const TestimonialComponent: React.FC<TestimonialComponentProps> = ({
 
         <div className='content-container'>
           <div className='content-item-1'>
-            <CustomVideoGlobalComponent 
-              videoSrc={videoSrc} 
-              fallbackVideoSrc={fallbackVideoSrc} 
-            />
+            <img src={imageSrc} alt={brandName} className='testimonial-image' /> {/* Displaying the image */}
           </div>
           <div className='content-item-2'>
             <div className='content-item-2-child'>

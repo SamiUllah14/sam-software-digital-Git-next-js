@@ -13,54 +13,36 @@ const Footer = () => {
               <img alt="Bitfactory logo" className="h-10" src={SamSblackLogo.src} width="40" />
             </div>
             <p className="mt-6 max-w-md leading-relaxed text-gray-500 sm:max-w-xs dark:text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque.
-            </p>
+             We build from cheapest Web app, Mobile app and Sites to expensive products, as per requirements.            </p>
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
               <li>
                 <Link
                   href="/facebook" // Add correct internal paths
-                  className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
+                  className="transition hover:text-gray-300"
                 >
                   <span className="sr-only">Facebook</span>
-                  <FaFacebook className="size-6" />
+                  <FaFacebook className="text-white size-6" />
                 </Link>
               </li>
               <li>
                 <Link
                   href="/instagram" // Add correct internal paths
-                  className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
+                  className="transition hover:text-gray-300"
                 >
                   <span className="sr-only">Instagram</span>
-                  <FaInstagram className="size-6" />
+                  <FaInstagram className="text-white size-6" />
                 </Link>
               </li>
               <li>
                 <Link
                   href="/twitter" // Add correct internal paths
-                  className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
+                  className="transition hover:text-gray-300"
                 >
                   <span className="sr-only">Twitter</span>
-                  <FaTwitter className="size-6" />
+                  <FaTwitter className="text-white size-6" />
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/github" // Add correct internal paths
-                  className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                >
-                  <span className="sr-only">GitHub</span>
-                  <FaGithub className="size-6" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/dribbble" // Add correct internal paths
-                  className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                >
-                  <span className="sr-only">Dribbble</span>
-                  <FaDribbble className="size-6" />
-                </Link>
-              </li>
+            
             </ul>
           </div>
 
@@ -68,7 +50,7 @@ const Footer = () => {
             {[
               {
                 title: 'About Us',
-                links: ['Meet the Team', 'Employee Handbook', 'Careers'],
+                links: ['Meet the Team', ],
               },
               {
                 title: 'Our Services',
@@ -76,7 +58,7 @@ const Footer = () => {
                   'Web Development',
                   'Mobile Application Development',
                   'Marketing',
-                  'Google Ads',
+                
                 ],
               },
               {
@@ -85,8 +67,8 @@ const Footer = () => {
               },
               {
                 title: 'Contact Us',
-                links: ['Facebook', 'Instagram', 'Twitter', 'GitHub', 'Dribbble'],
-                icons: [FaFacebook, FaInstagram, FaTwitter, FaGithub, FaDribbble],
+                links: ['Facebook', 'Instagram', 'Twitter' ,],
+                icons: [FaFacebook, FaInstagram, FaTwitter,],
               },
             ].map((section, index) => (
               <div className="text-center sm:text-right" key={index}>
@@ -144,11 +126,11 @@ const Footer = () => {
                       {section.icons.map((Icon, iconIndex) => (
                         <Link
                           href={`/${section.links[iconIndex].toLowerCase()}`} // Example internal paths for icons
-                          className="text-teal-700 transition hover:text-teal-700/75 dark:text-teal-500 dark:hover:text-teal-500/75"
+                          className="transition hover:text-gray-300"
                           key={iconIndex}
                         >
                           <span className="sr-only">{section.links[iconIndex]}</span>
-                          <Icon className="size-6" />
+                          <Icon className="text-white size-6" />
                         </Link>
                       ))}
                     </li>
@@ -165,14 +147,14 @@ const Footer = () => {
               <span className="block sm:inline">All rights reserved.</span>
               <Link
                 className="inline-block text-teal-600 transition hover:text-teal-600/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                href="/terms-and-conditions"
+                href="/TermsAndConditions"
               >
                 Terms & Conditions
               </Link>
               <span className="mx-1">&middot;</span>
               <Link
                 className="inline-block text-teal-600 transition hover:text-teal-600/75 dark:text-teal-500 dark:hover:text-teal-500/75"
-                href="/privacy-policy"
+                href="/PrivacyPolicy"
               >
                 Privacy Policy
               </Link>

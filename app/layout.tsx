@@ -6,6 +6,8 @@ import './globals.css';
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/GlobalComponents/Footer/Footer";
 import AboveFooterDownload from "./components/GlobalComponents/Footer/AboveFooterDownload";
+import HandGestureFooter from "./components/HandGestureFooter/HandGestureFooter";
+import CookieConsentBanner from "./components/ConsentCookiesComponent/ConsentCookiesComponent";
 
 // Initialize Silkscreen font
 const silkscreenInit = Silkscreen({
@@ -36,7 +38,12 @@ export default function RootLayout({
       <body className={`${ibmPlexSansInit.variable} ${ibmPlexSansInit.variable}`}>
         <NavBar />
         {children}
+        <CookieConsentBanner />
+
+        
+        <HandGestureFooter/>
         <AboveFooterDownload/>
+
         <Footer/>
 
       </body>

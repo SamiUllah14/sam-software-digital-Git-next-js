@@ -66,7 +66,7 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
           <button className="flex items-center text-black font-medium lg:hidden" onClick={toggleNav}>
             <FaBars />
           </button>
-          {['Services', 'Products', 'About'].map((item, index) => (
+          {['Services', 'Products', ].map((item, index) => (
             <div className="relative group hidden lg:flex" key={index}>
               <Link href={`/${item.replace(/\s+/g, '-')}`}>
                 <button className="flex items-center text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
@@ -93,7 +93,7 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
           </span>
         </div>
         <div className="flex items-center space-x-8 hidden lg:flex">
-          {['Cases', 'Insights'].map((item, index) => (
+          {['Cases', 'Careers'].map((item, index) => (
             <Link href={`/${item}`} key={index}>
               <span className="text-black font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
                 {item}
@@ -107,7 +107,7 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
       <div className="nav-overlay fixed top-0 left-0 w-full h-full bg-black transition-transform duration-500 ease-in-out transform -translate-y-full z-10" ref={navOverlayRef}>
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
-          {['Services', 'Products', 'About', 'Cases', 'Insights'].map((item, index) => (
+          {['Services', 'Products', 'Cases', 'Careers'].map((item, index) => (
             <Link href={`/${item.replace(/\s+/g, '-')}`} key={index}>
               <span 
                 ref={setNavLinkRef(index)} 

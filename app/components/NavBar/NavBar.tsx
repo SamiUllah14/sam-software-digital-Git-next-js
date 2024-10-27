@@ -86,13 +86,7 @@ const NavBar: React.FC = () => {
               </button>
             </Link>
           </div>
-          <div className="relative group hidden lg:flex">
-            <Link href="/About">
-              <button className="flex items-center text-white font-medium" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
-                About <FaChevronDown className="ml-1 text-white" />
-              </button>
-            </Link>
-          </div>
+      
         </div>
         <div className="flex items-center h-20">
           <div className="flex flex-col items-center">
@@ -105,8 +99,8 @@ const NavBar: React.FC = () => {
           <Link href="/Cases">
             <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Cases</span>
           </Link>
-          <Link href="/Insights">
-            <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Insights</span>
+          <Link href="/Careers">
+            <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Careers</span>
           </Link>
           <Link href="/Contactus">
             <button className="text-white font-small border border-white rounded-full px-4 py-2" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
@@ -119,7 +113,7 @@ const NavBar: React.FC = () => {
       <div className="nav-overlay fixed top-0 left-0 w-full h-full bg-black transition-transform duration-500 ease-in-out transform -translate-y-full z-10" ref={navOverlayRef}>
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
-          {['services', 'products', 'about', 'cases', 'insights'].map((item, index) => (
+          {['services', 'products',  'cases', 'Carears'].map((item, index) => (
             <Link href={`/${item}`} key={index}>
               <span ref={setNavLinkRef(index)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} onClick={closeNav}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}

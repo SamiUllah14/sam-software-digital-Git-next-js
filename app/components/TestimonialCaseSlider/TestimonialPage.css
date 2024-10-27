@@ -1,0 +1,12 @@
+.mySwiper {
+    height: 100vh; /* adjust the height to your needs */
+    background-color: white;
+  
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    
