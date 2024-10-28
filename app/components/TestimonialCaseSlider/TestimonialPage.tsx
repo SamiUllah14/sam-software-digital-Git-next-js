@@ -15,8 +15,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 // Import testimonial images
 import image1 from '@/app/Images/TestmonialPageImages/EcommerceDesign.png';
 import image2 from '@/app/Images/TestmonialPageImages/MobileCoffee.png';
-import image3 from '@/app/Images/TestmonialPageImages/MedicalImage.png';
-import image4 from '@/app/Images/TestmonialPageImages/RealEstateImage.png';
+import image3 from '@/app/Images/TestmonialPageImages/MedzImage.png';
+import image4 from '@/app/Images/TestmonialPageImages/LOGOLargeSlide.png';
 
 // Import TestimonialComponent
 import TestimonialComponent from './InnerComponents/TestimonialComponent';
@@ -107,7 +107,7 @@ const TestimonialPage = () => {
         {/* Slide 4 */}
         <SwiperSlide>
           <TestimonialComponent
-            title="Real Estate Digital"
+            title="(Contact Us For Any Business)"
             brandName="Revolutionizing Your Local Business Online"
             description="Product configurator / B2B e-commerce / B2C e-commerce / Tech strategy / UX/UI design / Web & software development / System integration / Managed cloud services / Support & maintenance / Laravel / Vue.js / AWS"
             casesText=""

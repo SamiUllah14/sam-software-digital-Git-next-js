@@ -1,0 +1,6 @@
+.black-line {
+    display: flex;
+    height: 1vh;
+    width: 100%;
+    background-color: black;
+}
