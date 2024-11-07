@@ -1,35 +1,26 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';  // Import Swiper React components
-
-// Import Swiper styles
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-import './TestimonialPage.css';  // Import custom CSS
-
-// Import required Swiper modules
+import './TestimonialPage.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-// Import testimonial images
 import image1 from '@/app/Images/TestmonialPageImages/EcommerceDesign.png';
 import image2 from '@/app/Images/TestmonialPageImages/MobileCoffee.png';
 import image3 from '@/app/Images/TestmonialPageImages/MedzImage.png';
 import image4 from '@/app/Images/TestmonialPageImages/LOGOLargeSlide.png';
-
-// Import TestimonialComponent
 import TestimonialComponent from './InnerComponents/TestimonialComponent';
+import SwiperCore from 'swiper';
 
-const TestimonialPage = () => {
+const TestimonialPage: React.FC = () => {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
 
-  // State to determine if navigation should be enabled on mobile devices
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+  // Set default state to `false` initially, then update in useEffect
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Handler to update autoplay progress
-  const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+  const onAutoplayTimeLeft = (s: SwiperCore, time: number, progress: number) => {
     if (progressCircle.current) {
       progressCircle.current.style.setProperty('--progress', (1 - progress).toString());
     }
@@ -38,16 +29,16 @@ const TestimonialPage = () => {
     }
   };
 
-  // Effect to handle window resize events
   useEffect(() => {
+    // Only runs in the browser, setting the correct initial value for `isMobile`
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener('resize', handleResize); // Listen for window resize
-
+    handleResize(); // Check on mount
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize); // Clean up listener on unmount
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -61,24 +52,22 @@ const TestimonialPage = () => {
           disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
-        navigation={!isMobile}  // Disable navigation on mobile
-        modules={[Autoplay, Pagination, Navigation]}  // Swiper modules
-        onAutoplayTimeLeft={onAutoplayTimeLeft}  // Autoplay progress handler
+        navigation={!isMobile}
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <TestimonialComponent
             title="Gold Jewelry Shop"
             brandName="Growing Digitally with an Explosive Jewelry Collection"
             description="Product configurator / B2B e-commerce / B2C e-commerce / Tech strategy / UX/UI design / Web & software development / System integration / Managed cloud services / Support & maintenance / ASP.Net / Next.js / AWS"
             casesText="Cases"
-            allCasesText="" 
-            imageSrc={image1.src}  // Set image source
+            allCasesText=""
+            imageSrc={image1.src}
           />
         </SwiperSlide>
 
-        {/* Slide 2 */}
         <SwiperSlide>
           <TestimonialComponent
             title="Coffee Shop"
@@ -87,11 +76,10 @@ const TestimonialPage = () => {
             casesText=""
             allCasesText=""
             allCasesLink="#"
-            imageSrc={image2.src}  // Set image source
+            imageSrc={image2.src}
           />
         </SwiperSlide>
 
-        {/* Slide 3 */}
         <SwiperSlide>
           <TestimonialComponent
             title="Medical Booking Online"
@@ -100,11 +88,10 @@ const TestimonialPage = () => {
             casesText=""
             allCasesLink="#"
             allCasesText=""
-            imageSrc={image3.src}  // Set image source
+            imageSrc={image3.src}
           />
         </SwiperSlide>
 
-        {/* Slide 4 */}
         <SwiperSlide>
           <TestimonialComponent
             title="(Contact Us For Any Business)"
@@ -113,11 +100,10 @@ const TestimonialPage = () => {
             casesText=""
             allCasesLink="#"
             allCasesText=""
-            imageSrc={image4.src}  // Set image source
+            imageSrc={image4.src}
           />
         </SwiperSlide>
 
-        {/* Progress Circle for Autoplay */}
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>

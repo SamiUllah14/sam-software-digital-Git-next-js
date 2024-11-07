@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Silkscreen } from 'next/font/google';
 import { IBM_Plex_Sans } from 'next/font/google';
 
 import './globals.css';
@@ -10,11 +9,7 @@ import HandGestureFooter from "./components/HandGestureFooter/HandGestureFooter"
 import CookieConsentBanner from "./components/ConsentCookiesComponent/ConsentCookiesComponent";
 
 // Initialize Silkscreen font
-const silkscreenInit = Silkscreen({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Silkscreen doesn't support 100/300 weights, so adjust accordingly
-  variable: '--font-silkscreen', // Change the variable name to reflect Silkscreen
-});
+
 
 // Initialize IBM Plex Sans
 const ibmPlexSansInit = IBM_Plex_Sans({

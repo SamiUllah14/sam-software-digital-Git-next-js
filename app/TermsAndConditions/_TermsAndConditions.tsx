@@ -1,5 +1,3 @@
-// components/TermsAndConditions.tsx
-
 import React from 'react';
 
 const TermsAndConditions: React.FC = () => {
@@ -9,17 +7,17 @@ const TermsAndConditions: React.FC = () => {
 
       <h2>1. Introduction</h2>
       <p>
-        Welcome to NewYorkSoftwares.com (“we,” “us,” or “our”). These Terms and
-        Conditions (“T&C”) govern your use of our website, services, and
+        Welcome to NewYorkSoftwares.com (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). These Terms and
+        Conditions (&quot;T&amp;C&quot;) govern your use of our website, services, and
         software solutions. By using our services, you agree to abide by these
-        T&C.
+        T&amp;C.
       </p>
 
       <h2>2. Definitions</h2>
       <p>
-        <strong>"User"</strong> refers to any individual or entity accessing or
+        <strong>&quot;User&quot;</strong> refers to any individual or entity accessing or
         using our services.<br />
-        <strong>"Service"</strong> means our website, web app, mobile app, or
+        <strong>&quot;Service&quot;</strong> means our website, web app, mobile app, or
         any services provided by NewYorkSoftwares.com.
       </p>
 
@@ -42,7 +40,7 @@ const TermsAndConditions: React.FC = () => {
 
       <h2>5. Disclaimer of Warranties</h2>
       <p>
-        Our services are provided on an "as-is" and "as available" basis.
+        Our services are provided on an &quot;as-is&quot; and &quot;as available&quot; basis.
         NewYorkSoftwares.com disclaims any warranties, either express or
         implied, to the fullest extent permitted by law.
       </p>
@@ -57,26 +55,26 @@ const TermsAndConditions: React.FC = () => {
       <h2>7. Termination</h2>
       <p>
         We reserve the right to suspend or terminate your access to our services
-        if you violate these T&C. We may provide notice where possible.
+        if you violate these T&amp;C. We may provide notice where possible.
       </p>
 
       <h2>8. Governing Law and Jurisdiction</h2>
       <p>
-        These T&C are governed by the laws of the United States and the State of
+        These T&amp;C are governed by the laws of the United States and the State of
         New York. Any disputes arising from these terms shall be resolved in the
         courts located within New York.
       </p>
 
       <h2>9. Changes to Terms</h2>
       <p>
-        We reserve the right to update or modify these T&C at any time. Changes
+        We reserve the right to update or modify these T&amp;C at any time. Changes
         will be communicated on this page. Continued use of our services
         following any changes constitutes your acceptance of the new terms.
       </p>
 
       <h2>10. Contact Us</h2>
       <p>
-        If you have any questions or concerns regarding these T&C, please
+        If you have any questions or concerns regarding these T&amp;C, please
         contact us at support@newyorksoftwares.com.
       </p>
     </div>

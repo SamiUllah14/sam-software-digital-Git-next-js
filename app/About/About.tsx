@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
       <section className="w-full max-w-7xl text-center space-y-8">
         <h2 className="text-4xl font-bold text-gray-800">Who We Are</h2>
         <p className="text-lg text-gray-600 mx-auto max-w-4xl">
-          Established in 2010, we are a full-service software development company specializing in 
+          Established in 2024, we are a full-service software development company specializing in 
           custom software, web, and mobile app development. Our mission is to drive transformation 
           in the tech industry by focusing on innovation, customer satisfaction, and delivering 
           measurable results for businesses worldwide.
@@ -47,16 +48,18 @@ const About = () => {
         <h2 className="text-4xl font-bold text-gray-800">Meet Our Leadership Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: 'John Doe', title: 'CEO', imgId: 12 },
-            { name: 'Jane Smith', title: 'CTO', imgId: 20 },
-            { name: 'Michael Brown', title: 'CFO', imgId: 45 },
-            { name: 'Emma Wilson', title: 'COO', imgId: 29 },
+            { name: "John Doe", title: "CEO", imgId: 29 },
+            { name: "Emma Willi", title: "COO", imgId: 12 },
+            { name: "Jane Smith", title: "CTO", imgId: 20 },
+            { name: "Maria Brown", title: "CFO", imgId: 45 },
           ].map((leader, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 space-y-4">
-              <img
+              <Image
                 className="w-24 h-24 rounded-full mx-auto object-cover"
-                src={`https://randomuser.me/api/portraits/${index % 2 === 0 ? 'men' : 'women'}/${leader.imgId}.jpg`}
+                src={`https://randomuser.me/api/portraits/${index % 2 === 0 ? "men" : "women"}/${leader.imgId}.jpg`}
                 alt={leader.name}
+                width={96}
+                height={96}
               />
               <h3 className="text-xl font-medium text-gray-800">{leader.name}</h3>
               <p className="text-gray-500">{leader.title}</p>
@@ -71,23 +74,23 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
-              name: 'Alice Johnson',
-              feedback: 'The team delivered exceptional software solutions that exceeded our expectations!',
+              name: "Alice Johnson",
+              feedback: "The team delivered exceptional software solutions that exceeded our expectations!",
               imgId: 32,
             },
             {
-              name: 'Robert King',
-              feedback: 'Reliable, professional, and results-driven service every time.',
+              name: "Robert King",
+              feedback: "Reliable, professional, and results-driven service every time.",
               imgId: 14,
             },
             {
-              name: 'Sarah Lee',
-              feedback: 'A fantastic experience from start to finish. They truly care about their clients.',
+              name: "Sarah Lee",
+              feedback: "A fantastic experience from start to finish. They truly care about their clients.",
               imgId: 23,
             },
             {
-              name: 'Daniel Thompson',
-              feedback: 'Exceptional service and on-time delivery. Highly recommended!',
+              name: "Daniel Thompson",
+              feedback: "Exceptional service and on-time delivery. Highly recommended!",
               imgId: 56,
             },
           ].map((testimonial, index) => (
@@ -96,14 +99,16 @@ const About = () => {
               className="bg-white rounded-lg shadow-lg p-6 space-y-4 border-l-4 border-indigo-500"
             >
               <div className="flex items-center space-x-4">
-                <img
+                <Image
                   className="w-12 h-12 rounded-full object-cover"
-                  src={`https://randomuser.me/api/portraits/${index % 2 === 0 ? 'men' : 'women'}/${testimonial.imgId}.jpg`}
+                  src={`https://randomuser.me/api/portraits/${index % 2 === 0 ? "men" : "women"}/${testimonial.imgId}.jpg`}
                   alt={testimonial.name}
+                  width={48}
+                  height={48}
                 />
                 <div>
                   <p className="text-gray-500 font-semibold">{testimonial.name}</p>
-                  <p className="text-gray-600">"{testimonial.feedback}"</p>
+                  <p className="text-gray-600">&quot;{testimonial.feedback}&quot;</p>
                 </div>
               </div>
             </div>
@@ -115,25 +120,25 @@ const About = () => {
       <section className="w-full max-w-7xl text-center space-y-8">
         <h2 className="text-4xl font-bold text-gray-800">Get in Touch</h2>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-          Whether you're in the USA, Saudi Arabia, or Pakistan, we're here to help. Contact us 
+          Whether you&apos;re in the USA, Saudi Arabia, or Pakistan, we&apos;re here to help. Contact us 
           to discuss your project, ask any questions, or learn more about our services.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              location: 'USA Office',
-              address: '123 Software Lane, Silicon Valley, CA',
-              email: 'contact@usasoftware.com',
+              location: "USA Office",
+              address: "123 Software Lane, Silicon Valley, CA",
+              email: "business@newyorksoftwares.com",
             },
             {
-              location: 'Saudi Arabia Office',
-              address: '456 Tech Park, Riyadh',
-              email: 'contact@saudisoftware.com',
+              location: "Saudi Arabia Office",
+              address: "456 Tech Park, Riyadh",
+              email: "business@newyorksoftwares.com",
             },
             {
-              location: 'Pakistan Office',
-              address: '789 IT Hub, Islamabad',
-              email: 'contact@pakistansoftware.com',
+              location: "Pakistan Office",
+              address: "789 IT Hub, Islamabad",
+              email: "business@newyorksoftwares.com",
             },
           ].map((office, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-left">

@@ -26,16 +26,16 @@ const ContactSection: React.FC = () => {
                         </button>
                     </div>
                     <div className="mt-8 md:mt-0">
-                        <h5 className="text-base mb-2">Contact</h5>
+                        <h5 className="text-base mb-2">Whatsapp Contact</h5>
                         <p className="text-base mb-2">
-                            <a href="mailto:info@bitfactory.nl" className="text-white underline">info@bitfactory.nl</a><br />
-                            <span>010 – 477 40 32</span>
+                            <a href="mailto:business@newyorksoftwares.com" className="text-white underline">business@newyorksoftwares.com</a><br />
+                            <span>+17163061452</span>
                         </p>
                         <hr className="border-gray-600 mb-4" />
                         <h5 className="text-base mb-2">Service Desk</h5>
                         <p className="text-base mb-2">
-                            <a href="mailto:servicedesk@bitfactory.nl" className="text-white underline">servicedesk@bitfactory.nl</a><br />
-                            <span>010 – 885 29 99</span>
+                            <a href="mailto:business@newyorksoftwares.com" className="text-white underline">business@newyorksoftwares.com</a><br />
+                            <span>+17163061452</span>
                         </p>
                         <hr className="border-gray-600 mb-4" />
                         <h5 className="text-base mb-2">Address</h5>
@@ -45,7 +45,7 @@ const ContactSection: React.FC = () => {
                             3011 KD Rotterdam
                         </p>
                         <p>
-                            <a href="#" className="text-white underline">Route</a>
+                            <a href="#" className="text-white underline"></a>
                         </p>
                     </div>
                 </div>

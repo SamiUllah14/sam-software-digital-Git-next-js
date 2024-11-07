@@ -1,7 +1,7 @@
 // components/CookieConsentBanner.tsx
 "use client"; // Ensures the component is treated as a client component
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import { useRouter } from 'next/navigation';
 

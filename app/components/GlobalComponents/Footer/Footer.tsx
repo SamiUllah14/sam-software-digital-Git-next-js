@@ -1,6 +1,6 @@
 import React from 'react';
 import SamSblackLogo from '@/app/Images/NewYorkSoftLogoBlack.png'; // Import your PNG image here
-import { FaFacebook, FaInstagram, FaTwitter, FaGithub, FaDribbble } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter,  } from 'react-icons/fa';
 import Link from 'next/link'; // Assuming you're using Next.js for link navigation
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="text-center lg:text-left">
             <div className="flex justify-center text-teal-600 sm:justify-start dark:text-teal-300">
-              <img alt="Bitfactory logo" className="h-10" src={SamSblackLogo.src} width="40" />
+              <img alt="Newyorksoftwares logo" className="h-10" src={SamSblackLogo.src} width="40" />
             </div>
             <p className="mt-6 max-w-md leading-relaxed text-gray-500 sm:max-w-xs dark:text-gray-400">
              We build from cheapest Web app, Mobile app and Sites to expensive products, as per requirements.            </p>

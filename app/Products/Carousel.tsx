@@ -1,6 +1,5 @@
-// components/Carousel.js
-
 import React from "react";
+import Image from "next/image"; // Import Image component from next/image
 
 const Carousel = () => {
   return (
@@ -10,10 +9,13 @@ const Carousel = () => {
         <div>
           <input className="sr-only peer" type="radio" name="carousel" id="carousel-1" defaultChecked />
           <div className="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
-            <img
-              className="rounded-t-lg w-96 h-64"
+            {/* Using Image component instead of img */}
+            <Image
+              className="rounded-t-lg"
               src="https://images.unsplash.com/photo-1628788835388-415ee2fa9576?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=384&q=80"
-              alt=""
+              alt="Carousel Image"
+              width={384} // Add width and height for better optimization
+              height={256} // Set height based on aspect ratio
             />
             <div className="py-4 px-8">
               <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
@@ -42,15 +44,16 @@ const Carousel = () => {
 
       </div>
       <a
-        href="https://www.buymeacoffee.com/dgauderman"
         target="_blank"
         rel="noopener noreferrer"
         className="md:absolute bottom-0 right-0 p-4 float-right animate-bounce"
       >
-        <img
+        <Image
           src="https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-3.svg"
           alt="Buy Me A Coffee"
-          className="transition-all rounded-full w-14 -rotate-45 hover:shadow-sm shadow-lg ring hover:ring-4 ring-white"
+          width={56} // Set width and height for better optimization
+          height={56}
+          className="transition-all rounded-full -rotate-45 hover:shadow-sm shadow-lg ring hover:ring-4 ring-white"
         />
       </a>
     </div>

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const ContactUsFormComponent: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +10,7 @@ const ContactUsFormComponent: React.FC = () => {
     message: ''
   });
 
-  const [statusMessage, setStatusMessage] = useState('');
-  const [messageType, setMessageType] = useState<'success' | 'error' | ''>(''); // To handle message type
+  const [showDialog, setShowDialog] = useState(false); // State to control dialog visibility
 
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,24 +23,15 @@ const ContactUsFormComponent: React.FC = () => {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:5041/contactus', formData);
-      setStatusMessage(response.data.message || 'Message sent successfully!');
-      setMessageType('success'); // Set message type to success
-    } catch (error) {
-      console.error('There was an error sending the message', error);
-      setStatusMessage('An error occurred. Please try again later.');
-      setMessageType('error'); // Set message type to error
-    }
+    setShowDialog(true); // Show the dialog on form submission
   };
 
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-lg w-full space-y-8 bg-white p-8 shadow-lg r text-gray-500 rounded-lg">
+      <div className="max-w-lg w-full space-y-8 bg-white p-8 shadow-lg text-gray-500 rounded-lg">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900">Contact Us</h1>
-          <p className="mt-2 text-sm text-gray-600">We'd love to hear from you!</p>
+          <p className="mt-2 text-sm text-gray-600">We&apos;d love to hear from you!</p>
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -100,9 +89,9 @@ const ContactUsFormComponent: React.FC = () => {
                 className="w-full p-3 border text-gray-500 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               >
                 <option disabled hidden value="">Subject line</option>
-                <option>I'd like to start a project</option>
-                <option>I'd like to ask a question</option>
-                <option>I'd like to make a proposal</option>
+                <option>I&apos;d like to start a project</option>
+                <option>I&apos;d like to ask a question</option>
+                <option>I&apos;d like to make a proposal</option>
               </select>
             </div>
 
@@ -111,7 +100,7 @@ const ContactUsFormComponent: React.FC = () => {
               <textarea 
                 name="message" 
                 id="message" 
-                placeholder="I'd like to chat about" 
+                placeholder="I&apos;d like to chat about" 
                 cols={30} 
                 rows={5} 
                 required 
@@ -123,19 +112,28 @@ const ContactUsFormComponent: React.FC = () => {
           </div>
 
           <div>
-          <button
-  type="submit"
-  className="w-full py-3 px-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black"
->
-  Send Message
-</button>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black"
+            >
+              Send Message
+            </button>
           </div>
         </form>
 
-        {statusMessage && (
-          <div className={`mt-6 text-center p-4 rounded-lg ${messageType === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-            <span className="text-2xl">{messageType === 'success' ? '✔️' : '❌'}</span>
-            <p className="mt-2">{statusMessage}</p>
+        {showDialog && (
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-xs">
+              <span className="text-4xl" role="img" aria-label="worried face">😟</span>
+              <h2 className="mt-4 text-lg font-semibold">This form is under development</h2>
+              <p className="mt-2 text-gray-600">Please contact us at <a href="mailto:business@newyorksoftwares.com" className="text-blue-600 underline">business@newyorksoftwares.com</a></p>
+              <button
+                onClick={() => setShowDialog(false)}
+                className="mt-4 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg focus:outline-none hover:bg-gray-300"
+              >
+                Close
+              </button>
+            </div>
           </div>
         )}
       </div>

@@ -5,7 +5,7 @@ const PrivacyPolicy: React.FC = () => {
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', color: 'white' }}>
       <h1>Privacy Policy</h1>
       <p>
-        This Privacy Policy outlines how NewYorkSoftwares.com ("we," "us," or "our") collects, uses, and protects your personal information in compliance with the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). By using our services, you consent to the practices described in this policy.
+        This Privacy Policy outlines how NewYorkSoftwares.com (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects your personal information in compliance with the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). By using our services, you consent to the practices described in this policy.
       </p>
 
       <h2>1. Information We Collect</h2>
