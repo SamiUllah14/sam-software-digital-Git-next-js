@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "appwrite": "^16.0.2",
     "axios": "^1.7.7",
     "flowbite-react": "^0.10.2",
     "font-awesome": "^4.7.0",

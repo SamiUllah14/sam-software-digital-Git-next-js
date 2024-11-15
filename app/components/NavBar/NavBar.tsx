@@ -95,7 +95,7 @@ const NavBar: React.FC = () => {
           <Link href="/Careers">
             <span className="text-white font-small" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>Careers</span>
           </Link>
-          <Link href="/Contactus">
+          <Link href="/Contact">
             <button className="text-white font-small border border-white rounded-full px-4 py-2" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '1.1em' }}>
               Contact
             </button>
@@ -106,7 +106,7 @@ const NavBar: React.FC = () => {
       <div ref={navOverlayRef} className="nav-overlay fixed top-0 left-0 w-full h-full bg-black transform -translate-y-full z-10">
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
-          {['services', 'products', 'About', 'Careers'].map((item, index) => (
+          {['services', 'products', 'About', 'Careers','Contact'].map((item, index) => (
             <Link href={`/${item}`} key={index}>
               <span ref={setNavLinkRef(index)} className="nav-link text-2xl" style={{ fontFamily: 'var(--font-ibm-plex)', fontSize: '22px' }} onClick={closeNav}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}

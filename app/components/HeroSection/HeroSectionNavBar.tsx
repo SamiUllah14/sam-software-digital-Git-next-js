@@ -96,7 +96,7 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
               </span>
             </Link>
           ))}
-          <ButtonOutliner text="Contact" href="Contactus" />
+          <ButtonOutliner text="Contact" href="Contact" />
         </div>
       </nav>
 
@@ -104,7 +104,7 @@ const HeroSectionNavBar: React.FC<HeroSectionNavBarProps> = ({ backgroundColor =
       <div className="nav-overlay fixed top-0 left-0 w-full h-full bg-black transition-transform duration-500 ease-in-out transform -translate-y-full z-10" ref={navOverlayRef}>
         <button className="absolute top-5 right-5 text-white text-2xl" onClick={closeNav}>&times;</button>
         <div className="flex flex-col space-y-4 text-white items-center justify-center h-full">
-          {['Services', 'Products', 'About', 'Careers'].map((item, index) => (
+          {['Services', 'Products', 'About', 'Careers','Contact'].map((item, index) => (
             <Link href={`/${item.replace(/\s+/g, '-')}`} key={index}>
               <span 
                 ref={setNavLinkRef(index)} 

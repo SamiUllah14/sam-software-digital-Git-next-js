@@ -46,7 +46,7 @@ const AboutUs = () => {
                 ['PIM system', 'Product configurator'],
               ]}
               buttonText="Contact Now"
-              buttonLink="/Contactus"
+              buttonLink="/Contact"
             />
 
             {/* Mobile Apps Service */}
@@ -59,7 +59,7 @@ const AboutUs = () => {
                 ['Mobile app', 'Business application'],
               ]}
               buttonText="Contact Now"
-              buttonLink="/Contactus"
+              buttonLink="/Contact"
             />
 
             {/* High Conversion Sites Service */}
@@ -72,7 +72,7 @@ const AboutUs = () => {
                 ['High traffic platform', 'Intranet'],
               ]}
               buttonText="Contact Now"
-              buttonLink="/Contactus"
+              buttonLink="/Contact"
             />
           </div>
         </section>
